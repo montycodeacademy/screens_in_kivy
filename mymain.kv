@@ -1,0 +1,49 @@
+ScreenManager:
+    id: screen_manager
+
+    Screen:
+        name: "Screen 1"
+        id: screen1
+
+        BoxLayout:
+            canvas:
+                Color:
+                    rgba: [1, 0, 0, 1]
+
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            orientation: 'vertical'
+
+            Label:
+                text: "Screen 1"
+
+            Button:
+                id: button_next
+                text: "Next"
+                on_release: app.setScreen(*args)
+
+    Screen:
+        name: "Screen 2"
+        id: screen2
+
+        BoxLayout:
+            canvas:
+                Color:
+                    rgba: [0, 0, 1, 1]
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            orientation: 'vertical'
+
+            Label:
+                text: "Screen 2"
+
+            Button:
+                id: button_prev
+                text: "Prev"
+                on_release: app.setScreen(*args)
+
+
